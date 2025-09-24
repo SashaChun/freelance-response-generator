@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Freelance Response Generator",
+  "version": "1.0.0",
+  "description": "Генерує професійні відповіді замовнику на фриланс біржах за допомогою Gemini AI",
+  
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "storage",
+    "clipboardWrite"
+  ],
+  
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Налаштування Freelance Response Generator"
+  }
+  
+ 
+}
